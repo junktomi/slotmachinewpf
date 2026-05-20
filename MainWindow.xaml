@@ -1,0 +1,106 @@
+<Window x:Class="SlotMachineWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Félkarú rabló" Height="560" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#1F1F2E">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#2B2B3D" CornerRadius="12" Padding="16" Margin="0,0,0,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock Text="Egyenleg" Foreground="White" FontSize="18"/>
+                    <TextBlock x:Name="BalanceText" Text="100" Foreground="#FFD166" FontSize="28" FontWeight="Bold"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Pörgetés ára" Foreground="White" FontSize="18"/>
+                    <TextBlock x:Name="SpinCostText" Text="10" Foreground="#8ECAE6" FontSize="28" FontWeight="Bold"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Nagy nyeremény" Foreground="White" FontSize="18"/>
+                    <TextBlock x:Name="BigWinText" Text="50" Foreground="#90BE6D" FontSize="28" FontWeight="Bold"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3">
+                    <TextBlock Text="Kis nyeremény" Foreground="White" FontSize="18"/>
+                    <TextBlock x:Name="SmallWinText" Text="20" Foreground="#F4A261" FontSize="28" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Margin="8" CornerRadius="16" Background="#2B2B3D" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="1" Background="#3A3A52" CornerRadius="12" Margin="0,4"/>
+                    <Grid Grid.Row="0" Margin="0,4"><Image x:Name="Reel1TopImage" Stretch="Uniform"/><TextBlock x:Name="Reel1TopFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                    <Grid Grid.Row="1" Margin="0,4"><Image x:Name="Reel1CenterImage" Stretch="Uniform"/><TextBlock x:Name="Reel1CenterFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                    <Grid Grid.Row="2" Margin="0,4"><Image x:Name="Reel1BottomImage" Stretch="Uniform"/><TextBlock x:Name="Reel1BottomFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="1" Margin="8" CornerRadius="16" Background="#2B2B3D" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="1" Background="#3A3A52" CornerRadius="12" Margin="0,4"/>
+                    <Grid Grid.Row="0" Margin="0,4"><Image x:Name="Reel2TopImage" Stretch="Uniform"/><TextBlock x:Name="Reel2TopFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                    <Grid Grid.Row="1" Margin="0,4"><Image x:Name="Reel2CenterImage" Stretch="Uniform"/><TextBlock x:Name="Reel2CenterFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                    <Grid Grid.Row="2" Margin="0,4"><Image x:Name="Reel2BottomImage" Stretch="Uniform"/><TextBlock x:Name="Reel2BottomFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="2" Margin="8" CornerRadius="16" Background="#2B2B3D" Padding="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="1" Background="#3A3A52" CornerRadius="12" Margin="0,4"/>
+                    <Grid Grid.Row="0" Margin="0,4"><Image x:Name="Reel3TopImage" Stretch="Uniform"/><TextBlock x:Name="Reel3TopFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                    <Grid Grid.Row="1" Margin="0,4"><Image x:Name="Reel3CenterImage" Stretch="Uniform"/><TextBlock x:Name="Reel3CenterFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                    <Grid Grid.Row="2" Margin="0,4"><Image x:Name="Reel3BottomImage" Stretch="Uniform"/><TextBlock x:Name="Reel3BottomFallback" Visibility="Collapsed" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button x:Name="SpinButton" Content="Pörgetés" Width="220" Height="56"
+                    FontSize="24" FontWeight="Bold" Click="SpinButton_Click"
+                    Background="#FFD166" Foreground="#1F1F2E" BorderThickness="0"/>
+            <TextBlock x:Name="ResultText" Text="Nyomd meg a Pörgetés gombot!" Margin="0,12,0,0"
+                       Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="StatsText" Text="Pörgetések: 0 | Győzelem: 0 | Vereség: 0" Margin="0,6,0,0"
+                       Foreground="#C9D1D9" FontSize="16" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
